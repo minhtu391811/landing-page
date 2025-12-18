@@ -5,7 +5,7 @@
 
 /* Vietnamese food delivery app theme with vibrant greens and yellows */
 :root {
-  --background: #02300C;
+  --background: #1B4A21;
   --foreground: oklch(0.25 0.08 155);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.25 0.08 155);

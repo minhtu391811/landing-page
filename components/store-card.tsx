@@ -46,18 +46,18 @@ export function StoreCard({ name, address, image, recommendation, recommendation
 
   // Sticker Settings
   let stickerImg = "/images/milo-sticker-1.png";
-  let stickerPosition = "-left-[28%]";
+  let stickerPosition = "-left-[25%] top-[20%]";
 
   if (variant === 2) {
-    stickerImg = "/images/milo-sticker-2.png";
-    stickerPosition = "-left-[30%]";
+    stickerImg = "/images/milo-sticker-2.png ";
+    stickerPosition = "-left-[30%] top-[35%]";
   }
   if (variant === 3) {
-    stickerPosition = "-right-[35%]";
+    stickerPosition = "-right-[35%] top-[40%]";
   }
   if (variant === 4) {
     stickerImg = "/images/milo-sticker-3.png";
-    stickerPosition = "-left-[25%]";
+    stickerPosition = "-left-[30%] top-[40%]";
   }
 
   return (
@@ -78,7 +78,7 @@ export function StoreCard({ name, address, image, recommendation, recommendation
             style={{ clipPath: "polygon(5% 0, 100% 0, 95% 100%, 0% 100%)" }}
           >
             <div className="w-full text-center px-1" style={{ "--char-count": Math.max(name.length, 10) } as React.CSSProperties}>
-              <h3 className="font-[family-name:var(--font-montserrat)] text-[calc(100cqw/var(--char-count))] font-black italic uppercase text-white drop-shadow-sm whitespace-nowrap overflow-hidden text-ellipsis leading-normal py-1 text-center">
+              <h3 className="font-montserrat text-[calc(100cqw/var(--char-count))] font-black italic uppercase text-white drop-shadow-sm whitespace-nowrap overflow-hidden text-ellipsis leading-normal py-1 text-center">
                 {name}
               </h3>
             </div>
@@ -87,7 +87,7 @@ export function StoreCard({ name, address, image, recommendation, recommendation
 
         {/* Address */}
         <div className="absolute top-[11.5%] h-[14%] w-full text-center px-2 flex justify-center items-center" style={{ "--char-count": Math.max(address.length, 20) } as React.CSSProperties}>
-          <p className="text-white font-[family-name:var(--font-montserrat)] text-[calc(140cqw/var(--char-count))] font-semibold text-center truncate w-full">{address}</p>
+          <p className="text-white font-montserrat text-[calc(140cqw/var(--char-count))] font-semibold text-center truncate w-full">{address}</p>
         </div>
 
         {/* Image Container - Centered in remaining space */}
@@ -131,9 +131,9 @@ export function StoreCard({ name, address, image, recommendation, recommendation
             className="absolute -bottom-[2%] -right-[2%] w-[15%] h-[30%] object-contain z-20 pointer-events-none -rotate-25"
           />
 
-          <h4 className="flex-none text-[#1D6F2D] font-[family-name:var(--font-montserrat)] font-extrabold italic text-[8cqi] mb-[2%] tracking-tight text-center w-full truncate">{recommendation}</h4>
+          <h4 className="flex-none text-[#1D6F2D] font-montserrat font-extrabold italic text-[8cqi] mb-[2%] tracking-tight text-center w-full truncate">{recommendation}</h4>
           <div
-            className="flex-1 w-full h-full flex flex-col justify-center overflow-hidden text-white font-[family-name:var(--font-montserrat)] text-[calc(100cqw/var(--rec-list-count))] font-semibold gap-y-1 px-1 text-left"
+            className="flex-1 w-full h-full flex flex-col justify-center overflow-hidden text-white font-montserrat text-[calc(100cqw/var(--rec-list-count))] font-semibold gap-y-1 px-1 text-left"
             style={{ "--rec-list-count": Math.max(recommendationDetail.length, 20) } as React.CSSProperties}
           >
             {recommendationDetail.map((item, idx) => (
@@ -144,10 +144,10 @@ export function StoreCard({ name, address, image, recommendation, recommendation
             ))}
           </div>
           {/* Drink/Food Sticker Associated with Note */}
-          <div className={`absolute ${stickerPosition} top-[40%] -translate-y-[50%] drop-shadow-xl animate-bounce duration-1000 pointer-events-none ${variant === 3 ? "w-[55%] aspect-[1.5/1]" : "w-[40%] aspect-square"}`}>
+          <div className={`absolute ${stickerPosition} -translate-y-[50%] drop-shadow-xl animate-bounce duration-1000 pointer-events-none ${variant === 3 ? "w-[55%] aspect-[1.5/1]" : "w-[40%] aspect-square"}`}>
             {variant === 3 ? (
               <div className="w-[100%] h-[100%] relative flex items-end justify-center">
-                <img src="/images/milo-sticker-1.png" alt="sticker 1" className="w-[60%] h-full object-contain filter drop-shadow-lg absolute left-7 bottom-0 z-0 rotate-45" />
+                <img src="/images/milo-sticker-1.png" alt="sticker 1" className="w-[60%] h-full object-contain filter drop-shadow-lg absolute left-13 bottom-1 z-0 rotate-45" />
                 <img src="/images/milo-sticker-2.png" alt="sticker 2" className="w-[60%] h-[90%] object-contain filter drop-shadow-lg absolute left-3 bottom-0 z-0" />
               </div>
             ) : (
@@ -168,7 +168,7 @@ export function StoreCard({ name, address, image, recommendation, recommendation
           <Button
             className="w-full aspect-[121/32] bg-[#C5FE55] hover:bg-[#b5f044] text-[#03390D] p-0 rounded-full shadow-[-2px_3px_0px_#289B43] active:shadow-none active:translate-y-[2px] transition-all h-auto whitespace-normal flex items-center justify-center text-center"
           >
-            <span className="font-[family-name:var(--font-montserrat)] font-extrabold italic text-[8cqi] uppercase leading-none pb-[2px]">
+            <span className="font-montserrat font-extrabold italic text-[8cqi] uppercase leading-none pb-[2px]">
               Đặt ngay
             </span>
           </Button>

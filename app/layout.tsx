@@ -1,12 +1,7 @@
 import type React from "react"
 export const runtime = "edge"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono, Montserrat } from "next/font/google"
 import "./globals.css"
-
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
-const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "600", "700", "800", "900"], style: ["normal", "italic"], variable: "--font-montserrat" })
 
 export const metadata: Metadata = {
   title: "Milo Street",
@@ -38,7 +33,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="vi">
-      <body className={`font-sans antialiased ${montserrat.variable}`}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap&subset=vietnamese" rel="stylesheet" />
+      </head>
+      <body className="antialiased">
         {children}
       </body>
     </html>

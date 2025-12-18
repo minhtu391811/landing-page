@@ -9,7 +9,7 @@ export default function Home() {
       <div className="relative w-full aspect-[1920/2134]">
         <Image
           src="/images/background.jpeg"
-          alt="Hero background"
+          alt="Milostreet Hero"
           fill
           priority
           className="object-cover object-top"

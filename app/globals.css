@@ -75,7 +75,13 @@
   --sidebar-ring: oklch(0.65 0.18 145);
 }
 
+/* Explicit fallback for Montserrat font */
+.font-montserrat {
+  font-family: "Montserrat", sans-serif !important;
+}
+
 @theme inline {
+  --font-montserrat: "Montserrat", sans-serif;
   --font-sans: "Geist", "Geist Fallback";
   --font-mono: "Geist Mono", "Geist Mono Fallback";
   --color-background: var(--background);

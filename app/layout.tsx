@@ -1,4 +1,5 @@
 import type React from "react"
+export const runtime = "edge"
 import type { Metadata } from "next"
 import { Geist, Geist_Mono, Montserrat } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"

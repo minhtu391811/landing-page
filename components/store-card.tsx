@@ -53,7 +53,7 @@ export function StoreCard({ name, address, image, recommendation, recommendation
     stickerPosition = "-left-[30%] top-[35%]";
   }
   if (variant === 3) {
-    stickerPosition = "-right-[35%] top-[40%]";
+    stickerPosition = "-right-[38%] top-[40%]";
   }
   if (variant === 4) {
     stickerImg = "/images/milo-sticker-3.png";

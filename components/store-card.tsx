@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
 interface StoreCardProps {
@@ -101,10 +102,12 @@ export function StoreCard({ name, address, image, recommendation, recommendation
                 backgroundPosition: "0 0, 0 10px, 10px -10px, -10px 0px"
               }}
             />
-            <img
+            <Image
               src={image || "/placeholder.svg"}
               alt={name}
-              className="w-full h-full object-cover relative z-10"
+              fill
+              sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+              className="object-cover relative z-10"
             />
           </div>
         </div>
@@ -125,11 +128,16 @@ export function StoreCard({ name, address, image, recommendation, recommendation
           />
 
           {/* Corner Vector */}
-          <img
-            src="/vectors/vector.png"
-            alt="decoration"
-            className="absolute -bottom-[2%] -right-[2%] w-[15%] h-[30%] object-contain z-20 pointer-events-none -rotate-25"
-          />
+          <div className="absolute -bottom-[2%] -right-[2%] w-[15%] h-[30%] z-20 pointer-events-none -rotate-25">
+            <Image
+              src="/vectors/vector.png"
+              alt="decoration"
+              fill
+              sizes="10vw"
+              className="object-contain"
+            />
+          </div>
+
 
           <h4 className="flex-none text-[#1D6F2D] font-montserrat font-extrabold italic text-[8cqi] mb-[2%] tracking-tight text-center w-full truncate">{recommendation}</h4>
           <div
@@ -147,12 +155,16 @@ export function StoreCard({ name, address, image, recommendation, recommendation
           <div className={`absolute ${stickerPosition} -translate-y-[50%] drop-shadow-xl animate-bounce duration-1000 pointer-events-none ${variant === 3 ? "w-[55%] aspect-[1.5/1]" : "w-[40%] aspect-square"}`}>
             {variant === 3 ? (
               <div className="w-[100%] h-[100%] relative flex items-end justify-center">
-                <img src="/images/milo-sticker-1.png" alt="sticker 1" className="w-[60%] h-full object-contain filter drop-shadow-lg absolute left-13 bottom-1 z-0 rotate-45" />
-                <img src="/images/milo-sticker-2.png" alt="sticker 2" className="w-[60%] h-[90%] object-contain filter drop-shadow-lg absolute left-3 bottom-0 z-0" />
+                <div className="w-[60%] h-full relative left-13 bottom-1 z-0 rotate-45">
+                  <Image src="/images/milo-sticker-1.png" alt="sticker 1" fill sizes="15vw" className="object-contain filter drop-shadow-lg" />
+                </div>
+                <div className="w-[60%] h-[90%] relative left-3 bottom-0 z-0">
+                  <Image src="/images/milo-sticker-2.png" alt="sticker 2" fill sizes="15vw" className="object-contain filter drop-shadow-lg" />
+                </div>
               </div>
             ) : (
-              <div className="w-[100%] h-[100%] flex items-center justify-center">
-                <img src={stickerImg} alt="sticker" className="w-full h-full object-contain filter drop-shadow-lg" />
+              <div className="w-[100%] h-[100%] flex items-center justify-center relative">
+                <Image src={stickerImg} alt="sticker" fill sizes="15vw" className="object-contain filter drop-shadow-lg" />
               </div>
             )}
           </div>
@@ -160,7 +172,9 @@ export function StoreCard({ name, address, image, recommendation, recommendation
 
         {/* Decorative Arrow connecting square to note */}
         <div className={`absolute z-10 w-[25%] aspect-square pointer-events-none ${arrowPosition}`}>
-          <img src={arrowImg} alt="arrow" className="w-full h-full object-contain opacity-90" />
+          <div className="w-full h-full relative">
+            <Image src={arrowImg} alt="arrow" fill sizes="10vw" className="object-contain opacity-90" />
+          </div>
         </div>
 
         {/* Button - Fixed at Bottom */}
